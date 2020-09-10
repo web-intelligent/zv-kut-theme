@@ -1,0 +1,68 @@
+@keyframes jumpVk {
+    0% {
+        top: -100px;
+        height: 35px;
+    }
+    30% {
+        top: 0px;
+        height: 35px;
+    }
+    38% {
+        height: 15px;
+    }
+    40% {
+        height: 35px;
+    }
+    45% {
+        top: -15px;
+        height: 40px;
+    }
+    47% {
+        height: 35px;
+    }
+    60% {
+        top: 0px;
+    }
+    65% {
+        top: -5px;
+    }
+    70% {
+        top: 0;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@keyframes rotateVk {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes lightVk {
+    0% {
+        border: 0px solid rgb(33, 199, 149);
+        box-shadow: 0px 0px 0px rgb(12, 102, 75);
+    }
+    1% {
+        border: 3px solid rgb(33, 199, 149);
+        box-shadow: 0px 0px 0px rgb(12, 102, 75);
+    }
+    10% {
+        box-shadow: 0px 0px 20px rgb(12, 102, 75);
+        border: 1px solid rgb(33, 199, 149);
+    }
+    12% {
+        border: transparent;
+        box-shadow: 0px 0px 0px rgb(12, 102, 75);
+    }
+    100% {
+        border: transparent;
+        box-shadow: 0px 0px 0px rgb(12, 102, 75);
+    }
+}
+.jumpVk {
+    animation: jumpVk 1.5s ease-in-out 2.0s 1 alternate both, rotateVk 1.5s ease-in-out 4.0s 1 alternate both, lightVk 1.5s ease-in-out 5.5s infinite alternate both;
+}

@@ -1,0 +1,9 @@
+@mixin globalFont {
+    body {
+        font-family: $fontFamily;
+        color: $textColor;
+        line-height: $lineHeight;
+        font-size: $fontSize;
+        background: $bodyColor;
+    }
+ }
