@@ -6,6 +6,9 @@
     .logo img {
         width: 100%;
     }
+    .post-categories {
+        flex-direction: column;
+    }
     
 }
 @media screen and (max-width: 1023px) {
@@ -59,6 +62,12 @@
         top: 20px;
         padding: 10px 0;
     }
+    .posts {
+        column-count:1;
+    }
+    .post-categories {
+        flex-direction: row;
+    }
     
 }
 
@@ -103,5 +112,9 @@
     .bottom-footer {
         display: none;
     }
+    /* .post-footer {
+        flex-direction: column;
+    } */
+    
 }
 

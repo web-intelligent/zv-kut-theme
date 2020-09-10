@@ -1,0 +1,55 @@
+.posts {
+    column-count:2;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+.post {
+    break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+}
+.post h2 {
+    font-size: 24px;
+}
+.next-posts,
+.prev-posts {
+    margin-top: 20px;
+}
+.next-posts a,
+.prev-posts a {
+    text-decoration: none;
+    color: #fff;
+    background: #21c795;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    text-align: center;
+    font-weight: bold;
+}
+.single {
+    column-count:1 !important;
+}
+.single h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #202020;
+}
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.post-categories {
+    display: flex;
+}
+.post-categories li {
+    padding-right: 10px;
+}
+.post-categories a {
+    text-decoration: none;
+    color: #21c795;
+    transition: 0.2s ease-in-out;
+    font-weight: bold;
+}
+.post-categories a:hover {
+    color: #0c664b;
+}

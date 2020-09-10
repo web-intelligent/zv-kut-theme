@@ -8,19 +8,13 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-9">
                 <?get_template_part('parts/run_string');?>
-                <?php get_template_part('parts/slider');?>
                 <section class="news">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="heading">Новости МБОУ "Звонаревокутская СОШ"</div>
-                        </div>
-                    </div>
-                    <div class="posts">
+                    <div class="posts single">
                         <?php if( have_posts() ){while( have_posts() ){the_post();?>
                             <div class="post">
                                 <?php the_post_thumbnail(); ?>
-                                <h2><a href="<?php the_permalink()?>"><?php the_title();?></a></h2>
-                                <p><?php the_excerpt();?></p>
+                                <h1><?php the_title();?></h1>
+                                <p><?php the_content();?></p>
                                 <div class="meta-info">
                                     <div class="posted-date-time">
                                         <i class="far fa-calendar-alt"></i> <?php echo get_the_date('d.m.Y'); ?> <i class="far fa-clock"></i> <?php the_time('G:i'); ?>
@@ -28,21 +22,12 @@
                                     <div class="author">
                                         <i class="fas fa-user"></i> <?php the_author()?>
                                     </div>
+                                    <?php echo the_category();?>
                                 </div>
-                               <div class="post-footer">
-                               <a href="<?php the_permalink( );?>" class="more-info">Подробнее</a>
-                               <?php echo the_category();?>
-                               </div>
                             </div>
                         
-                            <?php }?>
-
-                            <div class="navigation">
-                                <div class="next-posts"><?php next_posts_link(); ?></div>
-                                <div class="prev-posts"><?php previous_posts_link(); ?></div>
-                            </div>
-
-                            <?php } else {
+                            <?php }
+                                } else {
                                 echo "<h2>Записей нет.</h2>";
                             }?>
                     </div>
