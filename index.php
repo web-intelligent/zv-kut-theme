@@ -21,17 +21,17 @@
                             <div class="col-sm-12 col-md-12 col-lg-6">
                                 <div class="post">
                                     <?php the_post_thumbnail(); ?>
-                                    <h2><a href="#"><?php the_title();?></a></h2>
+                                    <h2><a href="<?php the_permalink()?>"><?php the_title();?></a></h2>
                                     <p><?php the_excerpt();?></p>
                                     <div class="meta-info">
                                         <div class="posted-date-time">
-                                            <i class="far fa-calendar-alt"></i> <?php the_date('d.m.Y'); ?> <i class="far fa-clock"></i> 15:22
+                                            <i class="far fa-calendar-alt"></i> <?php the_date('d.m.Y'); ?> <i class="far fa-clock"></i> <?php the_time('G:i'); ?>
                                         </div>
                                         <div class="author">
                                             <i class="fas fa-user"></i> <?php the_author()?>
                                         </div>
                                     </div>
-                                    <a href="#" class="more-info">Подробнее</a>
+                                    <a href="<?php the_permalink( );?> " class="more-info">Подробнее</a>
                                 </div>
                             </div>
                             <?php }?>
