@@ -53,3 +53,6 @@
 .post-categories a:hover {
     color: #0c664b;
 }
+.slider img {
+    height: auto;
+}

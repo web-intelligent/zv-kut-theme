@@ -1,4 +1,11 @@
-<?php get_header();?>
+<?php 
+
+/*
+ * Template name: Слайдер
+ * Template post type: post
+ */
+get_header();
+?>
 
 <section>
     <div class="container">

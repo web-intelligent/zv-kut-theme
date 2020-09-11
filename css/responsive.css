@@ -112,9 +112,20 @@
     .bottom-footer {
         display: none;
     }
-    /* .post-footer {
-        flex-direction: column;
-    } */
     
 }
-
+@media screen and (max-width:425px) {
+    .meta-info {
+        flex-direction: column;
+    }
+    .post-footer {
+        flex-direction: column;
+    }
+    .more-info {
+        display: block;
+        width: 140px;
+    }
+    .post-categories {
+        margin-top: 10px;
+    }
+}

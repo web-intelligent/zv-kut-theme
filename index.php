@@ -16,7 +16,22 @@
                         </div>
                     </div>
                     <div class="posts">
-                        <?php if( have_posts() ){while( have_posts() ){the_post();?>
+                        <?php
+                            $custom_query_args = array(
+                                'cat'=> -3
+                            );
+                            $custom_query_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+                            $custom_query = new WP_Query( $custom_query_args );
+                            // Pagination fix
+                            $temp_query = $wp_query;
+                            $wp_query   = NULL;
+                            $wp_query   = $custom_query;
+
+                            if ( $custom_query->have_posts() ) :
+                            while ( $custom_query->have_posts() ) :
+                                $custom_query->the_post();
+                        
+                        ?>
                             <div class="post">
                                 <?php the_post_thumbnail(); ?>
                                 <h2><a href="<?php the_permalink()?>"><?php the_title();?></a></h2>
@@ -35,16 +50,21 @@
                                </div>
                             </div>
                         
-                            <?php }?>
+                            <?php 
+                            endwhile;
+                            endif;
+                            // Reset postdata
+                            wp_reset_postdata();
 
-                            <div class="navigation">
-                                <div class="next-posts"><?php next_posts_link(); ?></div>
-                                <div class="prev-posts"><?php previous_posts_link(); ?></div>
-                            </div>
+                            // Custom query loop pagination
+                            previous_posts_link( 'Предыдущая страница' );
+                            next_posts_link( 'Следующая страница', $custom_query->max_num_pages );
 
-                            <?php } else {
-                                echo "<h2>Записей нет.</h2>";
-                            }?>
+                            // Reset main query object
+                            $wp_query = NULL;
+                            $wp_query = $temp_query;
+                            
+                            ?>
                     </div>
                 </section>
             </div>
