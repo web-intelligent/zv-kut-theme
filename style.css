@@ -56,3 +56,17 @@
 .slider img {
     height: auto;
 }
+.pagination a {
+    background: #21c795;
+    padding:8px 15px;
+    color: #fff;
+    text-decoration: none;
+}
+.pagination i {
+    font-size: 12px;
+}
+.not-found {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}

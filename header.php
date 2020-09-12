@@ -26,10 +26,10 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6">
-                <div class="search-form">
-                    <input type="text" class="search-field" placeholder="Поиск по сайту...">
-                    <input type="button" class="search-btn" value="Поиск">
-                </div>
+                <form class="search-form" action="<?php echo home_url('/'); ?>" method="">
+                    <input name="s" type="text" class="search-field" placeholder="Поиск по сайту...">
+                    <input type="submit" class="search-btn" value="Поиск">
+                </form>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-3 d-flex position-relative">
                 <div class="phone">

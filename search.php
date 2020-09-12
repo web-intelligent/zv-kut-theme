@@ -8,29 +8,18 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-9">
                 <?get_template_part('parts/run_string');?>
-                <?php get_template_part('parts/slider');?>
                 <section class="news">
                     <div class="row">
                         <div class="col-12">
-                            <div class="heading">Новости МБОУ "Звонаревокутская СОШ"</div>
+                            <div class="heading">Результат поиска по запросу "<?php echo get_search_query(); ?>"</div>
                         </div>
                     </div>
-                    <div class="posts">
+                    <div class="posts single">
                         <?php
-                            $custom_query_args = array(
-                                'cat'=> -3
-                            );
-                            $custom_query_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-                            $custom_query = new WP_Query( $custom_query_args );
-                            // Pagination fix
-                            $temp_query = $wp_query;
-                            $wp_query   = NULL;
-                            $wp_query   = $custom_query;
 
-                            if ( $custom_query->have_posts() ) :
-                            while ( $custom_query->have_posts() ) :
-                                $custom_query->the_post();
-                        
+                           if(have_posts()) {
+                               while(have_posts()) {
+                                   the_post();
                         ?>
                             <div class="post">
                                 <?php the_post_thumbnail(); ?>
@@ -51,22 +40,22 @@
                             </div>
                         
                             <?php 
-                            endwhile;
-                            endif;
-                            // Reset postdata
-                            wp_reset_postdata();
+                                }
                             ?>
                             <div class="pagination">
                             <?php
                             // Custom query loop pagination
-                            previous_posts_link( 'Предыдущая страница <i class="fas fa-chevron-left"></i>' );
+                            previous_posts_link( '<i class="fas fa-chevron-left"></i> Предыдущая страница' );
                             next_posts_link( 'Следующая страница <i class="fas fa-chevron-right"></i>', $custom_query->max_num_pages );
                             ?>
                             </div>
                             <?php
-                            // Reset main query object
-                            $wp_query = NULL;
-                            $wp_query = $temp_query;
+                            } else {
+                                echo "Ничего не найдено";
+                                ?>
+                                <img class="not-found" src="<?php bloginfo('template_url')?>/images/not-found.jpg" alt="">
+                            <?php    
+                            }
                             
                             ?>
                     </div>
