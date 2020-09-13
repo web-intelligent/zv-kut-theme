@@ -31,6 +31,11 @@
                                 echo "<h2>Записей нет.</h2>";
                             }?>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <?php comments_template(); ?>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>

@@ -66,7 +66,6 @@ $(document).ready(function () {
      });
 
      $('ul.attention li a').each(function(index, element) {
-         console.log(index);
          if(index % 2 != 0) {
             $(this).css('background', '#ccc')
          }
@@ -76,4 +75,6 @@ $(document).ready(function () {
          e.preventDefault;
         $(this).toggleClass('fullWidthPostimg');
      });  
+
+     $('.secondary-menu li').children('.sub-menu').after('<i class="fas fa-chevron-right"></i>');
 });

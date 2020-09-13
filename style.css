@@ -70,3 +70,48 @@
     height: auto;
     margin-top: 30px;
 }
+.secondary-menu li {
+    position: relative;
+}
+.secondary-menu i {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: 0.2s ease-in-out;
+}
+.secondary-menu li:hover i {
+    color: #fff;
+}
+.logo a:focus {
+    outline: transparent;
+}
+.logo a:visited {
+    outline: transparent;
+}
+.textwidget {
+    padding: 20px;
+}
+.textwidget p {
+    margin-bottom: 0;
+}
+.textwidget a {
+    color: #21c795;
+    text-decoration: none;
+    font-weight: bold;
+}
+.calendar_wrap {
+    padding: 20px;
+}
+.wp-calendar-table {
+    width: 100%;
+}
+.wp-calendar-table a{
+    color: #21c795;
+    text-decoration: none;
+    font-weight: bold;
+}
+.bvi-open {
+    width: 250px !important;
+    border-radius: 0 !important;
+    padding: 7px 0 !important;
+}

@@ -12,7 +12,19 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/animation.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url');?>/slick/slick.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url');?>/slick/slick-theme.css">
-    <title>МБОУ "Звонаревокутская СОШ"</title>
+    <title><?php 
+        
+        if(is_home()) {
+            bloginfo('name');
+        } else {
+            the_title('', ' - ') . bloginfo('name');
+        }
+        if(is_404()) {
+            echo '404 - Ничего не найдено';
+        }
+        
+        ?></title>
+    <?php wp_head(); ?>
 </head>
 <body>
 
@@ -47,64 +59,25 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-9">
+            <div class="primary-menu">
+            </div>
                 <div class="primary-menu">
                     <ul class="menu">
                         <li><a href="#"><i class="fas fa-home"></i> Главная</a></li>
                         <li><a href="#"> <i class="fas fa-address-card"></i> Контакты</a></li>
                         <li><a href="#"><i class="fas fa-question-circle"></i> Задать вопрос</a></li>
                         <li><a class="ads" href="#ads"><i class="fas fa-book-reader"></i> Объявления</a></li>
-                        <li><a class="bad-see" href="#"><i class="fas fa-eye"></i> Версия для слабовидящих</a></li>
+                        <li><?php echo do_shortcode( '[bvi text="Версия для слабовидящих"]' ); ?></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row mobile-menu">
             <div class="col-sm-12 col-md-12 col-lg-3">
-               <div class="open-menu"><span></span></div>
-               <ul class="secondary-mobile-menu">
-                   <li><a href="#">Сведения об ОУ</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Point 1</a></li>
-                            <li><a href="#">Point 2</a></li>
-                            <li><a href="#">Point 3</a></li>
-                            <li><a href="#">Point 4</a></li>
-                            <li><a href="#">Point 5</a></li>
-                        </ul>
-                   </li>
-                   <li><a href="#">Учительская</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Point 1</a></li>
-                            <li><a href="#">Point 2</a></li>
-                            <li><a href="#">Point 3</a></li>
-                            <li><a href="#">Point 4</a></li>
-                            <li><a href="#">Point 5</a></li>
-                        </ul>
-                    </li>
-                   <li><a href="#">Ученикам</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Point 1</a></li>
-                            <li><a href="#">Point 2</a></li>
-                            <li><a href="#">Point 3</a></li>
-                            <li><a href="#">Point 4</a></li>
-                            <li><a href="#">Point 5</a></li>
-                        </ul>
-                   </li>
-                   <li><a href="#">Родителя</a></li>
-                   <li><a href="#">Творчество</a></li>
-                   <li><a href="#">Дошкольники</a></li>
-               </ul>
-
+               <?php get_template_part('parts/mobile_menu')?>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-9">
-                <div class="primary-menu">
-                    <ul class="menu">
-                        <li><a href="#"><i class="fas fa-home"></i> Главная</a></li>
-                        <li><a href="#"><i class="fas fa-address-card"></i> Контакты</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i> Задать вопрос</a></li>
-                        <li><a class="ads" href="#ads"><i class="fas fa-book-reader"></i> Объявления</a></li>
-                        <li><a class="bad-see" href="#"><i class="fas fa-eye"></i> Версия для слабовидящих</a></li>
-                    </ul>
-                </div>
+                <?php get_template_part('header_menu')?>
             </div>
         </div>
     </div>
