@@ -41,5 +41,14 @@
         </div>
     </div>
 </section>
-<?php get_template_part('parts/ads'); ?>
+<?php 
+$post_type = get_post_type( $post_id );
+    if($post_type == 'ads') {
+        
+    } else {
+        get_template_part('parts/ads');
+    }
+                            
+?>
+
 <?php get_footer(); ?>
